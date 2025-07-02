@@ -13,6 +13,7 @@ import type { Todo, TodoList } from "./type";
 import S from "/src/style.module.css";
 // console.log(S);
 
+// 1️⃣ HTML 생성 및 삽입
 const tag = `
   <div class="${S.container}">
         <form>
@@ -25,42 +26,17 @@ const tag = `
 
 
         </ul>
-      </div>
+  </div>
 `
-// 내가 만든 코드
-/* document.body.insertAdjacentHTML("beforeend", tag);
-
-const form = document.querySelector("form");
-const input = document.getElementById("todo");
-const ul = document.getElementById("renderPlace");
-
-function render(itemText){
-  const li = document.createElement("li");
-  li.textContent = itemText;
-  ul.appendChild(li);
-}
-
-function handleSubmit(event){
-  event.preventDefault();
-
-  const value = input.value;
-
-  if(value){
-    render(value);
-    input.value = "";
-  } else {
-    alert("할 일을 입력해주세요!");
-  }
-}
-
-form.addEventListener("submit", handleSubmit); */
 
 document.querySelector("#app")?.insertAdjacentHTML("beforeend", tag);
 
+// 2️⃣ 폼 요소, 리스트 요소, input 요소 잡기
 const input = document.querySelector("#todo") as HTMLInputElement;
 const list = document.querySelector("#renderPlace") as HTMLUListElement;
-const form = document.querySelector("form");
+const form = document.querySelector("form") 
 
+// 3️⃣ 할 일 추가 (handleSubmit)
 function handleSubmit(e:SubmitEvent){
   e.preventDefault();
   const value = input.value.trim();
@@ -91,12 +67,9 @@ function handleSubmit(e:SubmitEvent){
   }
 } */
 
-
-
-
-
 // todos 데이터를 2개 이상 추가해서 리스트 렌더링 바꿔주세요.
 
+// 4️⃣ 렌더링 함수 (render)
 function render(){
 
   const todos:TodoList = loadStorage();
@@ -135,7 +108,7 @@ function render(){
       todo.id === id ? {...todo, completed:!todo.completed} : todo
     ) */
 
-      toggleTodo(todo.id);
+      toggleTodo(id);
       render()
   })
 
@@ -159,6 +132,7 @@ function render(){
 
 }
 
+// 5️⃣ 최초 렌더링 + submit 이벤트 바인딩
 render()
 form?.addEventListener("submit", handleSubmit);
 // list.addEventListener("click", handleDelete);

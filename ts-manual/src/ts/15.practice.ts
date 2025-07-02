@@ -27,7 +27,7 @@ function createCard({sprites,name}:Pick<Pokemon,'sprites'|'name'>):string{
   const tag = `
     <div class="card">
       <img src="${sprites['front_default']}" alt="${name}" />
-      <h2${name}></h2>
+      <h2>${name}</h2>
     </div>
   `
   return tag
