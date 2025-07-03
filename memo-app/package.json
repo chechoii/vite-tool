@@ -1,0 +1,19 @@
+{
+  "name": "memo-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.8.3",
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.50.3",
+    "gsap": "^3.13.0"
+  }
+}

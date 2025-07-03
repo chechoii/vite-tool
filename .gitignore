@@ -50,6 +50,7 @@ vite-auto/node_modules/
 vite-manual/node_modules/
 jspm_packages/
 
+.private.md
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
