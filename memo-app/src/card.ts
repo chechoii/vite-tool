@@ -34,8 +34,6 @@ function createMemo({id,priority,title,description,hits}:Tables<'memo'>):string{
 
 }
 
-
-
 // renderMemo
 
 export function renderMemo(target:HTMLElement | null, data:Tables<'memo'>):void{
